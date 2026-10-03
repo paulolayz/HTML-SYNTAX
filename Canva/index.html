@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    * {
+        font-family: 'IBM Plex Sans Arabic', sans-serif;
+        font-weight: 400;
+        margin: 0px;
+        color: white;
+    }
+    .center {
+        text-align: center;
+    }
+    a {
+        text-decoration: none;
+        color: black;
+        font-size: 14px;
+    }
+    img {
+        border-radius: 15px;
+    }
+    .top {
+        display: flex;
+        vertical-align: center;
+        align-items: center;
+        padding: 20px 20px 20px 40px;
+    }
+
+
+    .inside {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 2000px;
+    }
+    .button {
+        padding: 2px 10px 2px 10px;
+        border-radius: 10px;
+        margin: 0px 2px 0px 2px;
+        cursor: pointer;
+    }
+    .relative {
+        position: relative;
+    }
+    .below1 {
+        position: absolute;
+        margin: 10px 0px 0px -400px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+    h1 {
+        font-size: 84px;
+    }
+
+    h2 {
+        font-size: 56px;
+        color: black;
+    }
+    h3 {
+        font-size: 21px;
+    }
+    .white {
+        color: black;
+        padding: 10px 20px 10px 20px;
+        background-color: whitesmoke;
+        border: 0px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0px 1px 10px grey;
+        cursor: pointer;
+    }
+
+    .purple {
+         color: white;
+        padding: 10px 20px 10px 20px;
+        background-color: #7D3DD9;
+        border: 0px;
+        border-radius: 15px;
+        font-size: 14px;
+        font-weight: 600;
+        box-shadow: 0px 1px 10px grey;
+        cursor: pointer;
+    }
+    .gridbox {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px; 
+      padding: 20px;
+      margin: 20px 100px 20px 100px;
+      text-align: left;
+    }
+
+    .gridson {
+         border-radius: 16px; 
+         color: white;
+         background-color: yellow; 
+         padding: 32px;
+        min-height: 250px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: left;
+    }
+
+    .size1 {
+        font-size: 32px;
+    }
+    .left {
+        text-align: left;
+    }
+    .space {
+        letter-spacing: -1px;
+        line-height: 35px;
+        margin-right: 30%;
+        margin-bottom: 20px;
+    }
+    .ce {
+        display: flex;
+        justify-content: center;
+    }
+
+    .img {
+         transition: transform 0.3s ease-in-out;
+    }
+    .img:hover {
+        transform:scale(1.1,1.1)
+    }
+    .cont {
+        background-color: white;
+        display: flex;
+        border: 1px;
+        border-radius: 15px;
+    }
+    .sont {
+        background-color: white;
+        display: flex;
+        padding: 20px;
+        width: 180px;
+        border: 1px solid #f9fafc;
+        border-radius: 30px;
+    }
+    .black {
+        color: black;
+        line-height: 30px;
+    }
+    .b1:hover + .below1 {
+        opacity: 1;
+        visibility: visible;
+    }
+    .button:hover {
+        background-color: #943BFD;
+    }
+    .below1:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .pic {
+        border-radius: 20px;
+        margin: 10px;
+        border: whitesmoke solid 1px;
+    }
+
+    .scale {
+        scale: 1.2;
+    }
+    .grey {
+        color: grey;
+    }
+    .bg {
+        padding: 5px 20px 5px 2px;
+        border-radius: 15px;
+    }
+    .bg:hover {
+        background: whitesmoke;
+    }
+     .below2 {
+        position: absolute;
+        margin: 10px 0px 0px -200px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+     .b2:hover + .below2 {
+        opacity: 1;
+        visibility: visible;
+    }
+     .below2:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+      .below3 {
+        position: absolute;
+        margin: 10px 0px 0px -80px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+     .b3:hover + .below3 {
+        opacity: 1;
+        visibility: visible;
+    }
+     .below3:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+      .below4 {
+        position: absolute;
+        margin: 10px 0px 0px -400px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+     .b4:hover + .below4 {
+        opacity: 1;
+        visibility: visible;
+    }
+     .below4:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+      .below5 {
+        position: absolute;
+        margin: 10px 0px 0px -400px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+     .b5:hover + .below5 {
+        opacity: 1;
+        visibility: visible;
+    }
+     .below5:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+      .below6 {
+        position: absolute;
+        margin: 10px 0px 0px -200px;
+        text-align: left;
+        opacity: 0;
+        visibility: hidden;
+        transition: visibility 0.3s ease, opacity 0.3s ease;
+    }
+
+     .b6:hover + .below6 {
+        opacity: 1;
+        visibility: visible;
+    }
+     .below6:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+</style>
+</head>
+<body>
+    <div class="center">
+        <section style="background: linear-gradient(#942CFD,#3E5EDE,#15A4B6);">
+            <div class="top">
+                <img src="https://static.canva.com/web/images/856bac30504ecac8dbd38dbee61de1f1.svg" alt="" width="90px">
+                <div class="inside">
+                    <div class="relative">
+                        <p class="button b1">Design</p>
+                        <div class="below1 cont">
+                            <div class="sont"><p class="black"><span class="grey">Digital Design</span> <br><a href="https://www.canva.com/sheets/" class="bg">Sheets</a> <br><a href="https://www.canva.com/docs/" class="bg">Docs</a> <br>
+                            <a href="https://www.canva.com/online-whiteboards/" class="bg">Whiteboards</a> <br>
+                            <a href="https://www.canva.com/presentations/" class="bg">Presentations</a> <br>
+                            <a href="https://www.canva.com/social-media/" class="bg">Social</a> <br>
+                            <a href="https://www.canva.com/photo-editor/" class="bg">Photo Editor</a> <br>
+                            <a href="https://www.canva.com/video-editor/" class="bg">Videos</a> <br>
+                            <a href="https://www.canva.com/print/" class="bg">Print</a> <br>
+                            <a href="https://www.canva.com/website-builder/" class="bg">Websites</a> <br>
+                            <a href="https://www.canva.com/pdf-editor/" class="bg">PDF Editor</a></p></div>
+                            <div class="sont"><p class="black"><span class="grey">Print Design</span> <br><a href="https://canva.com/business-cards/" class="bg">Business Cards </a><br> 
+                            <a href="https://www.canva.com/invitations/" class="bg">Invitations</a><br>
+                            <a href="https://www.canva.com/flyers/" class="bg">Flyers</a><br>
+                            <a href="https://www.canva.com/brochures/" class="bg">Brochures</a><br>
+                            <a href="https://www.canva.com/t-shirts/" class="bg">T-shirts</a><br>
+                            <a href="https://www.canva.com/custom-mugs/" class="bg">Mugs</a><br>
+                            <a href="https://www.canva.com/stickers/" class="bg">Stickers</a><br>
+                            <a href="https://www.canva.com/hoodies-sweatshirts/" class="bg">Hoodies</a><br>
+                            <a href="https://www.canva.com/labels/" class="bg">Labels</a><br>
+                            <a href="https://www.canva.com/posters/" class="bg">Posters</a><br>
+                        </p></div>
+                            <div class="sont"><p class="black"><span class="grey">Images and Photos</span> <br><a href="https://www.canva.com/photo-editor/" class="bg">Photo Editor</a> <br><a href="https://www.canva.com/features/background-remover/" class="bg">Background Remover</a><br>
+                            <a href="https://www.canva.com/photo-collages/" class="bg">Photo Collages</a><br>
+                            <a href="https://www.canva.com/mockups/" class="bg">Mockups</a><br>
+                            <a href="https://www.canva.com/features/image-enchancer/" class="bg">Image Enhancer</a><br>
+                            <a href="https://www.canva.com/ai-image-generator/" class="bg">AI image generator</a><br>
+                            <a href="https://www.canva.com/features/ai-photo-editing/" class="bg">AI photo editor</a><br>
+                            <a href="https://www.canva.com/ai-art-generator/" class="bg">AI art generator</a><br>
+                            <a href="https://www.canva.com/draw/" class="bg">Draw</a><br>
+                            <a href="https://www.canva.com/logos/" class="bg">Logos</a><br>
+                            </p></div>
+                            <div class="sont"><p class="black"><span class="grey">Videos and Audio</span> <br><a href="https://www.canva.com/video-editor/" class="bg">Video editor</a> <br><a href="https://www.canva.com/video-editor/youtube/" class="bg">Youtube Video Editor</a><br>
+                            <a href="https://www.canva.com/features/video-trimmer/" class="bg">Video trimmer</a> <br>
+                            <a href="https://www.canva.com/features/online-video-recorder/" class="bg">Online video recorder</a> <br>
+                            <a href="https://www.canva.com/features/mp4-converter/" class="bg">Convert videos to mp4</a> <br>
+                            <a href="https://www.canva.com/features/ai-video-generator/" class="bg">AI video generator</a> <br>
+                            <a href="https://www.canva.com/features/text-to-speech/" class="bg">Text to speech voiceover</a> <br>
+                            <a href="https://www.canva.com/features/ai-music-generator/" class="bg">AI music generator</a> <br>
+                            <a href="https://www.canva.com/features/ai-voice-generator/" class="bg">AI voice generator</a> <br>
+
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="button b2">Products</p>
+                        <div class="below2 cont">
+                            <div class="sont"><p class="black"><span class="grey">Product</span><br>
+                                <a href="https://www.canva.com/launches/" class="bg">Latest launches</a> <br>
+                                <a href="https://www.canva.com/visual-suite/" class="bg">Visual Suite</a> <br>
+                                <a href="https://www.canva.com/solutions/brand-management-tools/" class="bg">Brand management</a> <br>
+                                <a href="https://www.canva.com/features/" class="bg">Product Features</a> <br>
+                                <a href="https://www.canva.com/apps/" class="bg">Apps Marketplace</a> <br>
+                                <a href="https://www.canva.com/templates/" class="bg">Templates Marketplace</a>
+                            </p></div>
+                            <div class="sont"><p class="black"><span class="grey">Canva AI</span><br>
+                                <a href="https://www.canva.com/magic-layers/" class="bg">Magic Layers</a> <br>
+                               <a href="https://www.canva.com/ai-assistant/" class="bg">Canva AI assistant</a> <br>
+                               <a href="https://www.canva.com/ai-code-generator/" class="bg">Canva Code</a> <br>
+                               <a href="https://www.canva.com/pro/magic-resize/" class="bg">Magic Resize</a> <br>
+                               <a href="https://www.canva.com/pro/animator/" class="bg">Magic Animate</a> <br>
+                               <a href="https://www.canva.com/magic-write/" class="bg">Magic Write</a> <br>
+                               <a href="https://www.canva.com//translate/" class="bg">Translate</a> <br>
+                               <a href="https://www.canva.com/features/data-analysis/" class="bg">Magic Insights</a> <br>
+                               <a href="https://www.canva.com/features/ai-formula-generator/" class="bg">Magic Formulas</a> <br>
+                                <a href="https://www.canva.com/canva-ai" class="grey bg">All Canva AI</a>
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="button b3">Plans</p>
+                         <div class="below3 cont">
+                            <div class="sont"><p class="black"><span class="grey">Plans</span> <br>
+                            <a href="https://www.canva.com/pricing/" class="bg">Compare pricing</a> <br>
+                            <a href="https://www.canva.com/pro/" class="bg">Pro</a> <br>
+                            <a href="https://www.canva.com/canva-business/" class="bg">Business</a> <br>
+                            <a href="https://www.canva.com/enterprise/" class="bg">Enterprise</a> <br>
+                            <a href="https://www.canva.com/nonprofits/" class="bg">Nonprofits</a> <br>
+                            <a href="https://www.canva.com/education/" class="bg">Education</a> <br>
+                            <a href="https://www.canva.com/higher-education/" class="bg">Higher education</a>
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="button b4">Business</p>
+                         <div class="below4 cont">
+                            <div class="sont"><p class="black">
+                                <a>Canva for business</a><br>
+                                <a>Contact Sales</a><br>
+                                <a>Demo video</a><br>
+                                <a>Business plans</a><br>
+                                <a>Canva Enterprise</a><br>
+                                <a>Canva Business</a><br>
+                                <a>All Canva for business</a><br>
+                            </p></div>
+                            <div class="sont"><p class="black">
+                                     <a>Solutions</a><br>
+        <a>Marketing</a><br>
+        <a>Sales</a><br>
+        <a>IT</a><br>
+        <a>Creatives</a><br>
+        <a>Higher education</a><br>
+        <a>Real estate</a><br>
+        <a>Government</a><br>
+        <a>Small business</a><br>
+        <a>All solutions</a><br>
+                            </p></div>
+                            <div class="sont"><p class="black">  <a>Features</a><br>
+        <a>Brand management</a><br>
+        <a>Content creation</a><br>
+        <a>Team management</a><br>
+        <a>Security and SSO</a><br>
+        <a>Integration apps</a><br>
+        <a>Brand templates</a><br>
+        <a>All features</a><br>
+                            </p></div>
+                            <div class="sont"><p class="black">
+                                 <a>Resources</a><br>
+        <a>Case studies</a><br>
+        <a>Enterprise onboarding</a><br>
+        <a>Partners directory</a><br>
+        <a>Reports</a><br>
+        <a>Marketing and AI</a><br>
+        <a>New</a><br>
+        <a>Visual Comms</a><br>
+        <a>TEI of Canva Enterprise</a><br>
+        <a>All resources</a>
+                            </p></div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="button b5">Education</p>
+                         <div class="below5 cont">
+                            <div class="sont"><p class="black"></p></div>
+                            <div class="sont"><p class="black"></p></div>
+                            <div class="sont"><p class="black"></p></div>
+                            <div class="sont"><p class="black"></p></div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <p class="button b6">Help</p>
+                         <div class="below6 cont">
+                            <div class="sont"><p class="black"></p></div>
+                            <div class="sont"><p class="black"></p></div>
+                        </div>
+                    </div>
+            </div>
+            <div class="inside" style="width: 250px;">
+                <p class="button" style="border: rgba(255, 255, 255, 0.227) solid 1px;">Sign Up</p>
+                <p class="button" style="background-color: white; color: black;">Log In</p>
+            </div>
+            </div>
+            <br><br>
+            <div>
+                <h1>What will you design today?</h1>
+                <h3>Make AI-powered social posts, videos, presentations, and more with Canva.</h3>
+                <br>
+                <button class="white">Start Designing</button>
+                <br><br><br>
+            </div>
+        </section>
+        <section style="background: linear-gradient(#15A4B6,white);">
+            <video src="https://content-management-files.canva.com/4e527a4c-09ca-4154-b4ec-553b1318b906/MagicLayers_Hero.mp4" alt="" width="1100px" style="box-shadow: 0px 1px 10px grey;" autoplay loop>
+        </section>
+        <br><br>
+        <h2>Tools to power your best work</h2>
+    </div>
+    <div class="gridbox">
+        <div class="gridson" style="grid-column: span 2; background: linear-gradient(#CF0ECD,#DA53E9,#E59EF6); overflow: hidden;">
+            <a href="https://www.canva.com/magic-layers"><h3 class="size1 left space">Turn your image into an editable layout with Magic Layers</h3>
+            <button class="white left">Explore Magic Layers</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/799924b3-8795-439f-b6ca-fe2f6d59842b/magic_layers_13.png" alt="" width="400px" class="img scale"></div>
+            </a>
+        </div>
+        <div class="gridson" style="background: linear-gradient(#FF425D,#FF7148,#FFA893); overflow: hidden;">
+             <a href="https://www.canva.com/features/magic-eraser/"><h3 class="size1 left space">Clean up photos with Magic Eraser</h3>
+            <button class="white left">Explore Magic Eraser</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/5716ba7e-5c0f-48c2-a62a-06fd8391c632/magic_eraser_13.png" alt="" width="412px" class="img scale" style="margin: 0px -50px -20px -50px;"></div>
+            </a>
+        </div>
+        <div class="gridson" style="background-color: #FFD6D8; overflow: hidden;">
+             <a href="https://www.canva.com/features/background-remover/"><h3 class="size1 left space" style="margin-right: 0%; color: black;">Remove image and video backgrounds in one click</h3>
+            <button class="white left">Explore Background Remover</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/5d0657be-e0e4-4449-bdf3-6e6d96f9465a/social-bgremover-mobile.png" alt="" width="412px" style="margin: 0px -50px -20px -50px;" class="img scale"></div>
+            </a>
+        </div>
+        <div class="gridson" style="grid-column: span 2; background: linear-gradient(#0C8BCC,#2EAECA,#92DEEC); height: 500px; overflow: hidden;">
+            <div style="margin-left: -300px;">
+                <a href="https://www.canva.com/magic-write"><h3 class="size1 left space" style="margin-right: 0%;">Elevate your writing with Magic Write</h3>
+                <button class="white left">Explore Magic Layers</button>
+                <br>
+                <div class="ce"><img src="https://content-management-files.canva.com/effa6ce3-b1f4-4790-bf3e-f3af1d7abec4/magic_write_13.png" alt="" width="500px" style="object-fit: cover;" class="img scale"></div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <h2 class="ce">All the tools. All in one place.</h2>
+    <div class="gridbox">
+        <div class="gridson" style="width: 550px; overflow: hidden; background: linear-gradient(#922CFD,#4E4EEE,#2EB2C3,#A8EAF7);">
+             <a href="https://www.canva.com/visual-suite/"><h3 class="size1  left space" style="margin-right: 0%;">Meet the Visual Suite</h3>
+                <p style="font-size: 20px;">Your entire workflow in one place for seamless creation and collaboration, powered by AI.</p>
+                <br>
+                <button class="white left">Explore Visual Suite</button>
+                <br>
+                <div class="ce"><img src="https://content-management-files.canva.com/885f99df-5bae-4e29-a850-3072c123b52c/visual-suite.png" alt="" width="500px" style="object-fit: cover;" class="img scale"></div>
+                </a>
+        </div>
+        <div class="gridson" style="width: 550px; overflow: hidden; background: linear-gradient(#FFBe98, #FC620E)">
+            <a href=""><h3 class="size1 black left space" style="margin-right: 0%;">Present with Impact</h3>
+                <p style="font-size: 20px; color: black;">Reimagine presentations with cinematic visuals, smart collaboration, and AI-powered tools.</p>
+                <br>
+                <button class="white left">Try Presentations</button>
+                <br>
+                <div class="ce"><img src="https://content-management-files.canva.com/097f7f39-de9a-4cd2-9829-13cc7e72282a/presentations_spotlight_clone_en.png" alt="" width="500px" style="object-fit: cover;" class="img scale"></div>
+                </a>
+        </div>
+    </div>
+    <br><br><br><br><br>
+    <h2 class="ce">Templates for absolutely anything</h2>
+    <div class="ce"><button class="ce purple">Start designing for free</button>
+    <button class="white" style="margin-left: 20px;"><a href="https://www.canva.com/templates" class="black" style="font-weight: 600;">Browse all templates</a></button></div>
+    <br>
+    <img src="https://template.canva.com/EAFtGtoTplg/2/0/900w-l-8ooEe2qwI.jpg" alt="" class="pic" style="width: 150px;">
+    <img src="https://template.canva.com/EAFb1RTYNSA/1/0/1280w-XfEjLnuoHo4.jpg" alt="" class="pic" style="width: 215px;">
+    <img src="https://template.canva.com/EAHUBSLKSH8/1/0/800w-3gJ_MELchu8.jpg" alt="" class="pic" style="width: 540px;">
+    <img src="https://template.canva.com/EAFyG4wwoWg/2/0/225w-_y_CPeyuIG0.jpg" alt="" class="pic" style="width: 155px;">
+    <img src="https://template.canva.com/EAFb1B98g4Y/1/0/400w-G7FP3vTiic0.jpg" alt="" class="pic" style="width: 280px;">
+    <img src="https://template.canva.com/EAHUBRilvFE/1/0/320w-P7y593kikoY.jpg" alt="" class="pic" style="width: 200px;">
+    <img src="https://template.canva.com/EAEFYrkJHdY/3/0/800w-Vi8-S451Vxc.jpg" alt="" class="pic" style="width: 450px;">
+    <img src="https://template.canva.com/EAFbR4ukV2E/5/0/309w-yMam5q_uNq4.jpg" alt="" class="pic" style="width: 200px;">
+    <img src="https://template.canva.com/EAGAAx1iW3U/12/0/800w-lXuSulOvETU.jpg" alt="" class="pic" style="width: 450px;">
+    <br><br><br><br><br>
+    <h2 class="ce">Unlock Canva’s creative ecosystem</h2>
+     <div class="gridbox">
+        <div class="gridson" style="grid-column: span 2; background: linear-gradient(#922CFD,#4E4EEE,#2EB2C3,#A8EAF7); overflow: hidden;">
+            <a href="https://www.canva.com/canva-world-tour/"><h3 class="size1 left space">
+Get inspired, build skills and discover what you can create
+</h3>
+            <button class="white left">Explore Canva World Tour</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/41e10646-5279-4702-a2dd-a9251f9a2f85/cwt_2026-1-3.png" alt="" width="500px" class="img scale"></div>
+            </a>
+        </div>
+        <div class="gridson" style="background: linear-gradient(#CF0ECD,#DA53E9,#E59EF6); overflow: hidden;">
+             <a href="https://www.canva.com/p/my-little-pony"><h3 class="size1 left space">
+Create magic with M‍y‍ ‍L‍i‍t‍t‍l‍e‍ ‍P‍o‍n‍y‍ Designs
+</h3>
+            <button class="white left">Explore The Collection</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/667611eb-3e20-4eb3-bdf4-87954c37e9f8/my_little_pony-1-3.png" alt="" width="412px" class="img scale" style="margin: 0px -50px -20px -50px;"></div>
+            </a>
+        </div>
+        <div class="gridson" style="background: linear-gradient(#382DBF, #4D56FA, #B8BAFD); overflow: hidden;">
+             <a href="https://www.canva.com/enterprise/"><h3 class="size1 left space" style="margin-right: 0%;">
+End-to-end platform for large organizations
+</h3>
+            <button class="white left">Explore Canva Enterprise</button>
+            <br>
+            <div class="ce"><img src="https://content-management-files.canva.com/a06f5d7e-8e16-4c93-b498-7bf1cac289a3/enterprise-mobile.png" alt="" width="412px" style="margin: 0px -50px -20px -50px;" class="img scale"></div>
+            </a>
+        </div>
+        <div class="gridson" style="grid-column: span 2; background: linear-gradient(#FF425D,#FF7148,#FFA893); height: 500px; overflow: hidden;">
+            <div style="margin-left: -300px;">
+                <a href="https://www.canva.com/magic-write"><h3 class="size1 left space" style="margin-right: 0%;">Elevate your writing with Magic Write</h3>
+                <button class="white left">Explore Magic Layers</button>
+                <br>
+                <div class="ce">
+                    <img src="https://content-management-files.canva.com/4a03e71f-0535-463e-990e-76de9eadb8b6/business-mobile.png" alt="" width="500px" style="margin-right: -200px" class="img scale">
+                </div>
+                </a>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
+    <div class="center">
+         <section style="background: linear-gradient(to left,#942CFD,#3E5EDE,#15A4B6);">
+            <h1 style="padding: 200px 0px 10px 0px;">Start Designing with <img src="https://static.canva.com/web/images/856bac30504ecac8dbd38dbee61de1f1.svg" alt="" style="width: 210px; vertical-align: middle;"></h1>
+            <button class="white" style="margin-bottom: 200px;">Get started for free</button>
+            
+         </section>
+    </div>
+</body>
+</html>
